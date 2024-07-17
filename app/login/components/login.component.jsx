@@ -1,4 +1,4 @@
-export default function LogInComponent({setUserLoggedIn}){
+export default function LogInComponent({setUserLoggedState}){
     
      async function onSubmitLogin(e){
         e.preventDefault();
@@ -31,14 +31,14 @@ export default function LogInComponent({setUserLoggedIn}){
             mode:'cors',
             credentials:'include',
         }).then(async function response(res) {
-            if(await res.ok){
-                setUserLoggedIn(true)
-            } else if(await res.status==401){
-                console.log(res.status)
+            if(res.ok){
+                setUserLoggedState(true)
+            } else if(res.status==401){
+                // console.log(res.status)
             }else{
-                setUserLoggedIn(false)
+                setUserLoggedState(false)
             }
-        })//res.ok ? setUserLoggedIn(true) : setUserLoggedIn(false)
+        })
     }
 
     return (<div className="flex justify-center">

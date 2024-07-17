@@ -1,7 +1,5 @@
-/* import { useState } from "react";*/
 "use client"
 
-import { useEffect, useState } from "react";
 import FooterPage from "./components/footerpage";
 import HomePage from "./components/homepage";
 import Nav from "./components/nav";
@@ -13,7 +11,8 @@ export default function Home() {
       <main>
         <HomePage></HomePage>
       </main>
-        <FooterPage></FooterPage>
+      {/* <div className="inline w-screen border border-"></div> */}
+      <FooterPage></FooterPage>
     </div>
   );
 }

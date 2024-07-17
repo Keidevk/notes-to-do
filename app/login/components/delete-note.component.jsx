@@ -1,12 +1,12 @@
 import { getCookie,onRequestNotes } from '../../functions/global-functions'
-export default function RemoveButton({id,setUserNotes}){
+export default function RemoveButton({id,setUserNotesState}){
     async function removeNote(){
         console.log(getCookie('user_id'),id);
         await fetch(`http://localhost:8080/api/notes/${id}`,{
             method: 'DELETE',
             mode: 'cors',
             credentials:'include',
-        }).then(()=>{onRequestNotes(setUserNotes)})
+        }).then(()=>{onRequestNotes(setUserNotesState)})
     }
-    return (<><button onClick={removeNote}>Remove</button></>)
+    return (<button className="bg-orange-300 text-white mt-4 text-2xl font-medium relative bottom-0 left-20 rounded-md w-3/6" onClick={removeNote}>Remove</button>)
 }
