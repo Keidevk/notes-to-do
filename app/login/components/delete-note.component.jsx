@@ -2,7 +2,7 @@ import { getCookie,onRequestNotes } from '../../functions/global-functions'
 export default function RemoveButton({id,setUserNotesState}){
     async function removeNote(){
         console.log(getCookie('user_id'),id);
-        await fetch(`http://localhost:8080/api/notes/${id}`,{
+        await fetch(process.env.HOST+`/api/notes/${id}`,{
             method: 'DELETE',
             mode: 'cors',
             credentials:'include',

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { useContext, useEffect} from "react";
 import { MenuContext } from '../login/page';
 async function Logout(){
-    fetch("http://localhost:8080/api/logout",{
+    fetch(process.env.HOST+"/api/logout",{
         method:"GET",
         mode:"cors",
         credentials:"include"

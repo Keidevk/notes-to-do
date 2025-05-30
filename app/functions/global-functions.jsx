@@ -3,7 +3,7 @@ export function getCookie(cookiename) {
     return decodeURIComponent(!!cookiestring ? cookiestring.toString().replace(/^[^=]+./,"") : "");
 }
 export async function onRequestNotes(setUserNotesState){
-    fetch('http://localhost:8080/api/notes',{
+    fetch(process.env.HOST+'/api/notes',{
         method:'GET',
         mode:'cors',
         credentials:'include',
@@ -42,7 +42,7 @@ export async function onRequestNotes(setUserNotesState){
 
 
 export function AuthLogged (setUserLoggedState){
-    fetch(`http://localhost:8080/api/auth/token`,{
+    fetch(process.env.HOST+`/api/auth/token`,{
         method: 'GET',
         mode:'cors',
         credentials:'include',

@@ -11,7 +11,6 @@ export default function Home() {
       <main>
         <HomePage></HomePage>
       </main>
-      {/* <div className="inline w-screen border border-"></div> */}
       <FooterPage></FooterPage>
     </div>
   );

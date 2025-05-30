@@ -3,7 +3,7 @@ export default function LogInComponent({setUserLoggedState}){
      async function onSubmitLogin(e){
         e.preventDefault();
         const formData = new FormData(e.target);
-         await fetch('http://localhost:8080/api/login',{
+         await fetch(process.env.HOST+'/api/login',{
             method: 'POST',
             mode:'cors',
             credentials:"include",
@@ -26,7 +26,7 @@ export default function LogInComponent({setUserLoggedState}){
     }
     
     async function onRequestAuthLogin(){
-        fetch('http://localhost:8080/api/auth/token',{
+        fetch(process.env.HOST+'/api/auth/token',{
             method: 'GET',
             mode:'cors',
             credentials:'include',

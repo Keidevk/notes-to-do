@@ -2,7 +2,7 @@ export default function SignInComponent(){
     async function onSubmitSignIn(e){
         e.preventDefault()
         const formData = new FormData(e.target)
-        await fetch('http://localhost:8080/api/', {
+        await fetch(process.env.HOST+'/api/', {
             method: 'POST',
             mode:'cors',
             headers: new Headers({'content-type': 'application/json'}),

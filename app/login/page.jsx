@@ -35,7 +35,6 @@ export default function Login(){
                 {
                     userLoggedState === true && userLoggedState != null &&
                     <>       
-                        {/* <h3>Status:Logged</h3> */}
                         <div className='flex justify-center'>
                             <CreateNoteComponent setUserNotesState={setUserNotesState}/>
                         </div>

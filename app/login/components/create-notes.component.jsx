@@ -7,7 +7,7 @@ export default function CreateNoteComponent({setUserNotesState}){
         const formData =  new FormData(e.target);
         let userName = getCookie('user_name')
         let userId = getCookie('user_id')
-        await fetch('http://localhost:8080/api/notes/create',{
+        await fetch(process.env.HOST+'/api/notes/create',{
             method: 'POST',
             mode:'cors',
             credentials:'include',
